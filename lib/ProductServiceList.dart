@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ProductServiceDetailScreen.dart';
+
 class ProductServiceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,6 +11,14 @@ class ProductServiceList extends StatelessWidget {
         return ListTile(
           title: Text('Product/Service $index'),
           subtitle: Text('Description of Product/Service $index'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProductServiceDetailScreen(index: index),
+              ),
+            );
+          },
         );
       },
     );
